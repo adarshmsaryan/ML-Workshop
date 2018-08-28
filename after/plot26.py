@@ -1,0 +1,15 @@
+ import cv2
+import numpy as pd
+img =cv2.imread('index.jpg')
+cv2.imshow('original img',img)
+cv2.waitKey(0)
+img_scaled=cv2.resize(img,None,fx=0.75,fy=0.75)
+cv2.imshow('scalling linearinterpolation',img_sacled)
+cv2.waitKey()
+ims1=cv2.resize(img,None,fx=2,fy=2,interpolation=cv2.INER_CUBIC)
+cv2.imshow('scaling-Cubic interpolation',ims1)
+cv2.waitKey(0)
+ims2=cv2.resize(img,(900,400),interpolation=cv2.INER_AREA)
+cv2.imshow('scaling-skewed Size',ims2)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
